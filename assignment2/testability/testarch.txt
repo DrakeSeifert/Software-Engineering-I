@@ -1,0 +1,28 @@
+1. Included additional functions -> increase abstraction and make code more readable
+2. add assert statements checking state of program
+
+My original implementation of kwic was definitely convoluted and 
+difficult to follow. This was primarily due to writing segments of 
+code, realizing that I overlooked or just messed up some property 
+that conflicted with the test driven development implementation, and 
+attempting to duct tape together my code to be workable and satisy 
+the requirements. Although done successfully the end result is not 
+pretty. Because of this,  my testkwic for assignment 2 primarily 
+focuses on improving code comprehension and making life easier for 
+myself and other programmers to comprehend my thought process. The 
+improvements in architecture can primarily be seen with the use of 
+various functions; previously, I had no functions other than kwic, 
+and by significantly increasing the number of functions my program 
+is segmented into readable and comprehensible chunks, while at the 
+same time improving abstraction. When combined with an increase in 
+comments explicitly explaining my code's processes, the potential 
+for testability in my kwic implementation has increased significantly.
+If another programmer or myself ran across problems with the kwic 
+function, the improved testkwic is now much more structurally sound,
+ensuring ease of testing and overall ability to improve and modify.
+The flowchart in testarch.pdf is a concrete example of the process of
+kwic, with dotted lines representing optional parameters. If a
+characteristic of kwic needed to be modified or improved, the
+enhanced architecture allows one to simply modify the flowchart to
+fit the improvements to get an accurate conceptual model of the 
+improved implementation.

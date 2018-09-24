@@ -1,0 +1,34 @@
+1. I decided to test more general items of my code at first, and if I had to guess I would
+say my code may be slighty different, but not much, if I had to change the order of the
+tests. I say not much because overall where my code ended up alluding to had a solution
+that I believe I would have ended up at one way or another. All in all there weren't a
+ton of ways to implement the requirements, and regardless of having to learn all the syntax
+and build my code as I went along, I'm under the impression there was an intended method of
+every small implementation required for the assignment. I do believe however that if I
+were more familiar with Python from the beginning that this assignment would have felt
+considerably easier. This also could have had a large effect on the order of my testing,
+and overall was the reason I had to keep going back and making modifications. This was 
+incredibly fustrating, and made it very difficult to implement testing. It seems as I
+went along that I found I had to change my program in such a way that all previous tests
+would fail, causing me to start my testing all over again. At a certain point I felt like
+test driven development was actually holding me back from making the progress I would have
+liked to have made, but I am not sure if that is because test driven development is just
+tedious in exchange for thorough code or if others are have a more equipt mindset to handle
+this form of testing. It's hard to say for sure if changing the order of my tests would
+have significantly changed my code because I kept on having to go back and alter previous
+tests anyways.
+
+2. Aside from the actual assignment itself, I found implementing test driven development
+to actually by much more difficult than I had originally anticipated. This on top of
+learning brand new syntax for a variety of requirements I found unintuitive made
+test driven development seem like a bit of a chore. The strengths of test driven development
+if someone is willing to actually do that willingly is that one is able to have very
+thorough testing. Using test driven development requires the programmer to completely 
+understand the ins and outs of their code without fail. Some weaknesses to test driven
+development are that it is quite tedious, and I actually felt like it took me longer to
+try and solve the assignment that way than if I were given the option not to. Whether or
+not it encourages or discourages certain program designs I would say depends on who is 
+programming. If one already has the natural ability to carry out a well thought out design
+then maybe test driven development is less necessary. Others may find it useful, but I hope,
+at least within the context of this assignment, that I don't have to use test driven
+development again soon.

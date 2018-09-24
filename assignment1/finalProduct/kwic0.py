@@ -1,0 +1,2 @@
+def kwic(mystr):
+	return []

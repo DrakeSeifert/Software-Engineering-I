@@ -1,0 +1,57 @@
+My initial implementation of kwic did not account for performance 
+and wasn't structured in a way that made it easy to modify. To first
+test performance I took some base tests of the speed with the
+time library to get an idea of what to expect and how much I should
+attempt to improve. Although my speeds were slightly better than
+the professor's implementation, I have to assume it is because he
+simultaneously accounts for the listPair parameter, regardless of it
+being true. My first attempt at improving speeds wasn't architectual,
+but was still relevant to the overall speed increase I was going for.
+This improvement was changing range to xrange, and saved minimal time.
+
+My next attempt at saving time was by using multiprocessing, but due
+to my lack of experience with such a task I quickly found this to be
+hard to implement correctly and as effeciently as I would have liked.
+After seeing on the discussion board that most people were not having
+success with multiprocessing or multithreading I decided to scrap the
+idea altogether. Even now I am not completely sure why this would not
+work successfully. It seems to me that if you take a single process
+and split it up into many simultaneous smaller processes that the end
+result would be much quicker, however there was a lot of discrepancy
+around how to get fastkwic to combine all the final answers from
+each process into a single, accurate answer. Seeing that I never got
+the opportunity to finish multiprocessing it is hard for me to say,
+although I am curious if there is a way to significantly increase
+speeds using this method. I am sure there are plenty of tools and
+tricks I am unaware of that would make this successful.
+
+After realizing that multiprocessing and multithreading was not the
+direction I wanted to go, I intead decided to attempt caching previous
+inputs. If an input had not been previously entered, I stored it into 
+a text file I would use for later reference. On the next line I stored
+the answer. This way, if the same string was entered twice, I could 
+simply reference the file and pull the answer instead of having to 
+calculate it all over again. Luckily this saved a good amount of time,
+however there are multiple drawbacks to using this method. The first is
+that the first time fastkwic is ran for a new string, it is actually
+just a little bit slower than my base implementation of kwic because
+it is doing the exact same thing with the addition to writing
+information to a file. If in a real-world scenario kwic is intended to
+constantly see new strings than this is of course a bad implemention
+and should not be used. The second drawback is that writing and reading
+from a file takes time, and for large amounts of text it starts to
+lose efficiancy. After numerous tests I found that fastkwic was only
+faster than kwic for strings between 100-5000 lines. Entire novels
+simply take too long to parse an entire file for.
+
+I am glad I saw increases in speed, however I did notice time would
+fluctuate largely on OSU's server based on what time I was on it.
+I have to assume that this was due to the load on the server. The
+first time I tested kwic for the entirety of Ulysses it took just
+under 300 seconds. The following morning I ran the exact same test
+and it took 19 seconds. This huge shift in time definitely makes it
+harder to confirm speeds, and is a factor that must be accounted for.
+My attempt to account for this was simply to test everything
+back-to-back all in one go, hopefully giving an accurate idea of 
+each kwic's speeds relative to one another.
+

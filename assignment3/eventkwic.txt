@@ -1,0 +1,51 @@
+There were many design decisions to consider while implementing my 
+version of my kwic class, all of which had to fit the requirements of
+the finite state machine that the eventspec class must be able to 
+iterate through. The two largest and most prevelant options for the 
+kwic class's design was to either recreate the index after each 
+update to the string to be returned or to index only when the index 
+function was called. After considering my two options I found some 
+pros and cons to both methods. For the first method (recreating the 
+index after each time the string is updated) it is much quicker to 
+implement with my current version of kwic I had available, and 
+overall is pretty easy to follow. That is, for every time the 
+addText function is called, append the new string to the previously 
+entered strings and index the entire string all over again. The same 
+goes for when reset is called; reset the string to empty and index 
+the empty string with my initial version of kwic. Using this method, 
+when either the index() or listPairs() functions are called, that 
+information is readily available and can be immediately returned. For 
+the second option, the Kwic class would perform the indexing only 
+when needed, so the design is a little 
+different. For this design, the class would simply update the string 
+when addText() and reset() are called and would only index them once 
+the index() or listPairs() functions were called. In the context of 
+the assignment I decided that the choice was arbitrary and went with 
+the former method of indexing immediately after the addText() and 
+reset() functions were called, which is reflected in my finite state 
+machine document. In a real world scenario the design choice does 
+matter. If the Kwic class is constantly calling addText() and 
+occasionally calling index() to retrieve the information, then my 
+implementation would be much slow as it is reindexing every single 
+time text is added. If however the information sat around for awhile 
+and then needed to be returned as soon as index() or listPairs() was 
+called, then I have designed the preferred implementation. As soon 
+as either is called I have the indexed information readily available 
+and immediately ready for use.
+Once I had my class fully implemented and functioning, I begin to 
+construct my finite state machine to follow the general logic of my 
+design. Although not particularly interesting, the output I received 
+from the eventspec classes printLog() function turned out to be 
+successful. I believe the most important part of my finite state 
+machine was including a state called "readyState" which essentially 
+reset all operatoins to a common state where all required functions 
+could be called from. This state also comes just after the constructor 
+state as to not have a bug in my finite state machine where the 
+callReset event does not set the finite state machine back to the 
+constructor state. Because of this, readyState has four events 
+that can be called that directly correspond to the required functions 
+for our Kwic class. Two of these functions then use a callRunKwic 
+event that reindexes the entire string. Following my design choice 
+I mentioned above, those two states are addText and Reset. Finally, 
+all events eventually circle back to the readyState state, allowing 
+the class to continue indefinitely.

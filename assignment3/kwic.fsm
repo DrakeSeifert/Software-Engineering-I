@@ -1,0 +1,25 @@
+begin: constructor
+
+state: constructor
+callConstructor -> readyState
+
+state: readyState
+callAddText -> addText
+callIndex -> index
+callListPairs -> listPairs
+callReset -> reset
+
+state: addText
+appendString -> runkwic
+
+state: runkwic
+callRunKwic -> readyState
+
+state: index
+returnIndex -> readyState
+
+state: listPairs
+returnListPairs -> readyState
+
+state: reset
+clearString -> runkwic
